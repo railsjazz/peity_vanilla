@@ -1,0 +1,12 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.columns {
+  display: flex;
+}
+
+.column {
+  width: 50%;
+}
