@@ -6,7 +6,7 @@ PS: 98% based on the original implementation: http://benpickles.github.io/peity/
 
 ## Pie Charts
 
-![Pie](docs/pie.png)
+<img src="docs/pie.png" height="30px"/>
 
 ```html
 <span class="pie">1/5</span>
@@ -28,7 +28,7 @@ You can also pass delimiter, fill, height, radius and width options. Passing a r
 
 ## Donut Charts
 
-![Donut](docs/donut.png)
+<img src="docs/donut.png" height="30px"/>
 
 ```html
 <span class="donut">1/5</span>
@@ -48,7 +48,8 @@ Donut charts are the same as pie charts and take the same options with an added 
 
 ## Line Charts
 
-![Line](docs/line.png)
+<img src="docs/line.png" height="30px"/>
+
 
 ```html
 <span class="line">5,3,9,6,5,9,7,3,5,2</span>
@@ -64,7 +65,8 @@ Line charts work on a comma-separated list of digits. Line charts can take the f
 
 ## Bar Charts
 
-![Bar](docs/bar.png)
+<img src="docs/bar.png" height="30px"/>
+
 
 ```html
 <span class="bar">5,3,9,6,5,9,7,3,5,2</span>
@@ -80,7 +82,7 @@ Bar charts work in the same way as line charts and take the following options: `
 
 ## data-* attributes
 
-![Custom](docs/custom.png)
+<img src="docs/custom.png" height="30px"/>
 
 Data attributes can be used to pass custom settings per-chart - options explicitly passed to the peity() function take precedence over data-* attributes.
 
@@ -102,7 +104,8 @@ Data attributes can be used to pass custom settings per-chart - options explicit
 
 ## Setting Colours Dynamically
 
-![Color](docs/color.png)
+<img src="docs/color.png" height="30px"/>
+
 
 ```html
 <span class="bar-colours-1">5,3,9,6,5,9,7,3,5,2</span>
@@ -146,7 +149,7 @@ Pie, donut and bar chart colours can be defined dynamically based on the values 
 
 ## Updating Charts
 
-![Color](docs/animation.gif)
+<img src="docs/animation.gif" height="30px"/>
 
 Charts can be updated by changing the selection's text content and calling change() on it. The chart will be redrawn with the same options that were originally passed to it.
 
