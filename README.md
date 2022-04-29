@@ -6,10 +6,10 @@ PS: 98% based on the original implementation: http://benpickles.github.io/peity/
 
 ## Instalation
 
-Just download `vanilla_peity.js` and add to your HTML file.
+Just download `peity_vanilla.js` and add to your HTML file.
 
 ```html
-<script type="text/javascript" src="vanilla_peity.js"></script>
+<script type="text/javascript" src="peity_vanilla.js"></script>
 ```
 
 And start using :)
@@ -238,6 +238,12 @@ Please if you want to contribute here is a list with some ideas:
 - minified version
 - build process and instructions
 - remote datasource
+
+# Build Process
+
+`yarn build` - production.
+
+`yarn start` - development, and open http://0.0.0.0:8080/
 
 # Credits
 

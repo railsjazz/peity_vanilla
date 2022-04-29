@@ -1,0 +1,22 @@
+{
+  "name": "piety_vanilla",
+  "version": "0.0.1",
+  "private": false,
+  "author": "Igor Kasyanchuk",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack serve --hot-only --config webpack.dev.js"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^5.3.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "devDependencies": {
+    "css-loader": "^5.2.6",
+    "style-loader": "^2.0.0"
+  }
+}
