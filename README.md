@@ -4,7 +4,7 @@ Converts an element's content into a `<svg>` mini pie  donut  line  or bar chart
 
 PS: 98% based on the original implementation: http://benpickles.github.io/peity/. 
 
-## Instalation
+## Installation
 
 Just download `peity_vanilla.js` and add to your HTML file.
 
