@@ -16,7 +16,7 @@ And start using :)
 
 ## Pie Charts
 
-<img src="docs/pie.png" height="30px"/>
+<img src="https://github.com/railsjazz/peity_vanilla/raw/main/docs/pie.png" height="30px"/>
 
 ```html
 <span class="pie">1/5</span>
@@ -38,7 +38,7 @@ You can also pass delimiter, fill, height, radius and width options. Passing a r
 
 ## Donut Charts
 
-<img src="docs/donut.png" height="30px"/>
+<img src="https://github.com/railsjazz/peity_vanilla/raw/main/docs/donut.png" height="30px"/>
 
 ```html
 <span class="donut">1/5</span>
@@ -58,7 +58,7 @@ Donut charts are the same as pie charts and take the same options with an added 
 
 ## Line Charts
 
-<img src="docs/line.png" height="30px"/>
+<img src="https://github.com/railsjazz/peity_vanilla/raw/main/docs/line.png" height="30px"/>
 
 
 ```html
@@ -75,7 +75,7 @@ Line charts work on a comma-separated list of digits. Line charts can take the f
 
 ## Bar Charts
 
-<img src="docs/bar.png" height="30px"/>
+<img src="https://github.com/railsjazz/peity_vanilla/raw/main/docs/bar.png" height="30px"/>
 
 
 ```html
@@ -92,7 +92,7 @@ Bar charts work in the same way as line charts and take the following options: `
 
 ## data-* attributes
 
-<img src="docs/custom.png" height="30px"/>
+<img src="https://github.com/railsjazz/peity_vanilla/raw/main/docs/custom.png" height="30px"/>
 
 Data attributes can be used to pass custom settings per-chart - options explicitly passed to the peity() function take precedence over data-* attributes.
 
@@ -114,7 +114,7 @@ Data attributes can be used to pass custom settings per-chart - options explicit
 
 ## Setting Colours Dynamically
 
-<img src="docs/color.png" height="30px"/>
+<img src="https://github.com/railsjazz/peity_vanilla/raw/main/docs/color.png" height="30px"/>
 
 
 ```html
@@ -159,7 +159,7 @@ Pie, donut and bar chart colours can be defined dynamically based on the values 
 
 ## Updating Charts
 
-<img src="docs/animation.gif" height="30px"/>
+<img src="https://github.com/railsjazz/peity_vanilla/raw/main/docs/animation.gif" height="30px"/>
 
 Charts can be updated by changing the selection's text content and calling change() on it. The chart will be redrawn with the same options that were originally passed to it.
 
