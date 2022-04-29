@@ -6,7 +6,9 @@ PS: 98% based on the original implementation: http://benpickles.github.io/peity/
 
 ## Installation
 
-Just download `peity_vanilla.js` and add to your HTML file.
+Just download `peity_vanilla.js` and add to your HTML file. 
+
+Download link: https://raw.githubusercontent.com/railsjazz/peity_vanilla/main/dist/peity_vanilla.js.
 
 ```html
 <script type="text/javascript" src="peity_vanilla.js"></script>
