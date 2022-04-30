@@ -240,6 +240,7 @@ Please if you want to contribute here is a list with some ideas:
 - minified version
 - build process and instructions
 - remote datasource
+- background color?
 
 # Build Process
 
