@@ -1,5 +1,7 @@
 # Peity Vanilla JS
 
+<img width="900" alt="peity" src="https://user-images.githubusercontent.com/11101/166119610-3b7c894e-1995-45ce-90f1-b94411a04d67.png">
+
 Converts an element's content into a `<svg>` mini pie  donut  line  or bar chart  and is compatible with any browser that supports `<svg>`: Chrome, Firefox, IE9+, Opera, Safari.
 
 PS: 98% based on the original implementation: http://benpickles.github.io/peity/. 
