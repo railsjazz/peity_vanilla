@@ -1,4 +1,13 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vanilla Peity Charts</title><script src="peity_vanilla.js"></script><style>.container {
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Peity Vanilla Charts</title>
+      <script type="text/javascript" src="peity_vanilla.js"></script>
+
+      <style>
+        .container {
           max-width: 800px;
           margin: 0 auto;
         }
@@ -8,8 +17,71 @@
         }
 
         .column {
-          width: 50%;
-        }</style></head><body class="container"><h1>Vanilla Peity Charts</h1><div class="columns"><div class="column"><h2>Line</h2><span class="line">5,3,9,6,5,9,7,3,5,2,3,5,5,1,-2</span> <span class="line">5,3,2,-1,-3,-2,2,3,5,2</span> <span class="line">0,-3,-6,-4,-5,-4,-7,-3,-5,-2</span> <span class="line" data-peity='{ "fill": "blue", "stroke": "red", "width": 50 }'>5,3,9,6,5,9,7,3,5,2,3,5,5,1</span><h2>Pie</h2><span class="pie">1/5</span> <span class="pie">226/360</span> <span class="pie">0.52/1.561</span> <span class="pie">1,4</span> <span class="pie">226,134</span> <span class="pie">0.52,1.041</span> <span class="pie">1,2,3,2,2</span><h2>Donut</h2><span class="donut">1/5</span> <span class="donut">226/360</span> <span class="donut">0.52/1.561</span> <span class="donut">1,4</span> <span class="donut">226,134</span> <span class="donut">0.52,1.041</span> <span class="donut">1,2,3,2,2</span><h2>Bar</h2><span class="bar">5,3,9,6,5,9,7,3,5,2</span> <span class="bar">5,3,2,-1,-3,-2,2,3,5,2</span> <span class="bar">0,-3,-6,-4,-5,-4,-7,-3,-5,-2</span><h2>Updatting Charts</h2><span id="updating-chart">5,3,9,6,5,9,7,3,5,2,5,3,9,6,5,9,7,3,5,2</span></div><div class="column"><h2>Color Options</h2><span class="bar-colours-1">5,3,9,6,5,9,7,3,5,2</span> <span class="bar-colours-2">5,3,2,-1,-3,-2,2,3,5,2,5,3,2,-1,-3</span> <span class="bar-colours-3">0,-3,-6,-4,-5,-4,-7,-3,-5,-2</span> <span class="pie-colours-1">4,7,6,5</span> <span class="pie-colours-2">5,3,9,6,5</span><h2>Other Options</h2><p class="data-attributes"><span data-peity='{ "fill": ["red", "#eeeeee"],    "innerRadius": 10, "radius": 40 }'>1/7</span> <span data-peity='{ "fill": ["orange", "#eeeeee"], "innerRadius": 14, "radius": 36 }'>2/7</span> <span data-peity='{ "fill": ["yellow", "#eeeeee"], "innerRadius": 16, "radius": 32 }'>3/7</span> <span data-peity='{ "fill": ["green", "#eeeeee"],  "innerRadius": 18, "radius": 28 }'>4/7</span> <span data-peity='{ "fill": ["blue", "#eeeeee"],   "innerRadius": 20, "radius": 24 }'>5/7</span> <span data-peity='{ "fill": ["violet", "#eeeeee"], "innerRadius": 15, "radius": 16 }'>7/7</span></p></div></div><script>peity.defaults.pie = {
+          width: 40%;
+        }
+      </style>
+  </head>
+
+  <body class="container">
+    <h1>Peity Vanilla Charts</h1>
+    <div class="columns">
+      <div class="column">
+        <h2>Line</h2>
+        <span class="line">5,3,9,6,5,9,7,3,5,2,3,5,5,1,-2</span>
+        <span class="line">5,3,2,-1,-3,-2,2,3,5,2</span>
+        <span class="line">0,-3,-6,-4,-5,-4,-7,-3,-5,-2</span>
+        <span class="line" data-peity='{ "fill": "blue", "stroke": "red", "width": 50 }'>5,3,9,6,5,9,7,3,5,2,3,5,5,1</span>
+
+        <h2>Pie</h2>
+        <span class="pie">1/5</span>
+        <span class="pie">226/360</span>
+        <span class="pie">0.52/1.561</span>
+        <span class="pie">1,4</span>
+        <span class="pie">226,134</span>
+        <span class="pie">0.52,1.041</span>
+        <span class="pie">1,2,3,2,2</span>
+
+        <h2>Donut</h2>
+        <span class="donut">1/5</span>
+        <span class="donut">226/360</span>
+        <span class="donut">0.52/1.561</span>
+        <span class="donut">1,4</span>
+        <span class="donut">226,134</span>
+        <span class="donut">0.52,1.041</span>
+        <span class="donut">1,2,3,2,2</span>
+
+        <h2>Bar</h2>
+        <span class="bar">5,3,9,6,5,9,7,3,5,2</span>
+        <span class="bar">5,3,2,-1,-3,-2,2,3,5,2</span>
+        <span class="bar">0,-3,-6,-4,-5,-4,-7,-3,-5,-2</span>
+
+        <h2>Updatting Charts</h2>
+        <span id="updating-chart">5,3,9,6,5,9,7,3,5,2,5,3,9,6,5,9,7,3,5,2</span>
+      </div>
+
+      <div class="column">
+        <h2>Color Options</h2>
+        <span class="bar-colours-1">5,3,9,6,5,9,7,3,5,2</span>
+        <span class="bar-colours-2">5,3,2,-1,-3,-2,2,3,5,2,5,3,2,-1,-3</span>
+        <span class="bar-colours-3">0,-3,-6,-4,-5,-4,-7,-3,-5,-2</span>
+        <span class="pie-colours-1">4,7,6,5</span>
+        <span class="pie-colours-2">5,3,9,6,5</span>
+
+        <h2>Other Options</h2>
+        <p class="data-attributes">
+          <span data-peity='{ "fill": ["red", "#eeeeee"],    "innerRadius": 10, "radius": 40 }'>1/7</span>
+          <span data-peity='{ "fill": ["orange", "#eeeeee"], "innerRadius": 14, "radius": 36 }'>2/7</span>
+          <span data-peity='{ "fill": ["yellow", "#eeeeee"], "innerRadius": 16, "radius": 32 }'>3/7</span>
+          <span data-peity='{ "fill": ["green", "#eeeeee"],  "innerRadius": 18, "radius": 28 }'>4/7</span>
+          <span data-peity='{ "fill": ["blue", "#eeeeee"],   "innerRadius": 20, "radius": 24 }'>5/7</span>
+          <span data-peity='{ "fill": ["violet", "#eeeeee"], "innerRadius": 15, "radius": 16 }'>7/7</span>
+        </p>
+      </div>
+    </div>
+  
+
+      <script>
+        peity.defaults.pie = {
           delimiter: null,
           fill: ["#58508d", "#ffa600", "#ff6361"],
           height: null,
@@ -92,4 +164,8 @@
 
           updatingChart.innerText = values.join(",")
           updatingChart.dispatchEvent(new Event('change'))
-        }, 1000);</script></body></html>
+        }, 1000);
+      </script>
+  <script  src="peity_vanilla.js"></script>
+</body>
+</html>

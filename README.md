@@ -245,8 +245,6 @@ Please if you want to contribute here is a list with some ideas:
 
 `yarn build` - production.
 
-`yarn start` - development, and open http://0.0.0.0:8080/
-
 # Credits
 
 Thanks for inspiration and original jQuery implementation - http://benpickles.github.io/peity/. I must admit this version is 98% consist of the original code, even the documentation, so please go to original page and put a "star" to original repo.

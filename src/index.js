@@ -3,9 +3,8 @@
 var peity = function(element, type, options) {
   if (svgSupported) {
     var $this = element
-    var chart = $this.dataset['_peity']
 
-    chart = new Peity(
+    var chart = new Peity(
       $this,
       type,
       Object.assign({},
@@ -15,7 +14,7 @@ var peity = function(element, type, options) {
     )
 
     $this.addEventListener("change", function() { chart.draw() })
-    $this.dataset['_peity'] = chart
+    $this.dataset['_peity'] = "1"
 
     chart.draw()
     return $this;
@@ -374,5 +373,4 @@ peity.register(
   }
 );
 
-// rework?
-window.peity = peity;
+export default window.peity = peity;

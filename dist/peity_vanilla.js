@@ -1,2 +1,317 @@
-!function(t,e){if("object"==typeof exports&&"object"==typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var i,n=e();for(i in n)("object"==typeof exports?exports:t)[i]=n[i]}}(self,()=>(()=>{"use strict";function a(t,e,i){var n;if(s)return n=(t=t).dataset._peity,n=new r(t,e,Object.assign({},a.defaults[e],JSON.parse(t.dataset.peity||"{}"),i)),t.addEventListener("change",function(){n.draw()}),(t.dataset._peity=n).draw(),t}function r(t,e,i){this.$el=t,this.type=e,this.opts=i}var t=r.prototype,M=t.svgElement=function(t,e){var i,n=document.createElementNS("http://www.w3.org/2000/svg",t);for(i in e)n.setAttribute(i,e[i]);return n},s="createElementNS"in document&&M("svg",{}).createSVGRect();return t.draw=function(){var t=this.opts;a.graphers[this.type].call(this,t),t.after&&t.after.call(this,t)},t.isFunction=function(t){return null!==t&&"function"==typeof t&&!!t.apply},t.fill=function(){var i=this.opts.fill;return t.isFunction(i)?i:function(t,e){return i[e%i.length]}},t.prepare=function(t,e){return this.$svg||(this.$el.style.display="none",this.$el.after(this.$svg=M("svg",{class:"peity"}))),this.$svg.innerHTML="",this.$svg.setAttribute("width",t),this.$svg.setAttribute("height",e),this.$svg},t.values=function(){return this.$el.innerText.split(this.opts.delimiter).map(function(t){return parseFloat(t)})},a.defaults={},a.graphers={},a.register=function(t,e,i){this.defaults[t]=e,this.graphers[t]=i},a.register("pie",{fill:["#ff9900","#fff4dd","#ffc66e"],radius:8},function(t){t.delimiter||(l=this.$el.innerText.match(/[^0-9\.]/),t.delimiter=l?l[0]:",");for(var e=this.values().map(function(t){return 0<t?t:0}),i=("/"==t.delimiter&&(l=e[0],r=e[1],e=[l,Math.max(0,r-l)]),0),n=e.length,a=0;i<n;i++)a+=e[i];a||(n=2,e=[0,a=1]);for(var r=2*t.radius,s=this.prepare(t.width||r,t.height||r),l=s.clientWidth,r=s.clientHeight,h=l/2,o=r/2,u=Math.min(h,o),c=t.innerRadius,p=("donut"!=this.type||c||(c=.5*u),Math.PI),f=this.fill(),d=this.scale=function(t,e){t=t/a*p*2-p/2;return[e*Math.cos(t)+h,e*Math.sin(t)+o]},g=0,i=0;i<n;i++){var m,v,y=e[i],x=y/a;0!=x&&((x=1==x?c?M("path",{d:["M",h,v=o-u,"A",u,u,0,1,1,m=h-.01,v,"L",m,v=o-c,"A",c,c,0,1,0,h,v].join(" "),"data-value":y}):M("circle",{cx:h,cy:o,"data-value":y,r:u}):(m=g+y,v=["M"].concat(d(g,u),"A",u,u,0,.5<x?1:0,1,d(m,u),"L"),c?v=v.concat(d(m,c),"A",c,c,0,.5<x?1:0,0,d(g,c)):v.push(h,o),g+=y,M("path",{d:v.join(" "),"data-value":y}))).setAttribute("fill",f.call(this,y,i,e)),s.append(x))}}),a.register("donut",Object.assign(!0,{},a.defaults.pie),function(t){a.graphers.pie.call(this,t)}),a.register("bar",{delimiter:",",fill:["#4D89F9"],height:16,min:0,padding:.1,width:32},function(t){for(var e=this.values(),i=Math.max.apply(Math,null==t.max?e:e.concat(t.max)),n=Math.min.apply(Math,null==t.min?e:e.concat(t.min)),a=this.prepare(t.width,t.height),r=a.clientWidth,s=a.clientHeight,l=i-n,h=t.padding,o=this.fill(),u=this.x=function(t){return t*r/e.length},c=this.y=function(t){return s-(l?(t-n)/l*s:1)},p=0;p<e.length;p++){var f,d=u(p+h),g=u(p+1-h)-d,m=e[p],v=c(m),y=v;l?m<0?y=c(Math.min(i,0)):v=c(Math.max(n,0)):f=1,0==(f=v-y)&&(f=1,0<i&&l&&y--),a.append(M("rect",{"data-value":m,fill:o.call(this,m,p,e),x:d,y:y,width:g,height:f}))}}),a.register("line",{delimiter:",",fill:"#c6d9fd",height:16,min:0,stroke:"#4d89f9",strokeWidth:1,width:32},function(t){for(var e=this.values(),i=(1==e.length&&e.push(e[0]),Math.max.apply(Math,null==t.max?e:e.concat(t.max))),n=Math.min.apply(Math,null==t.min?e:e.concat(t.min)),a=this.prepare(t.width,t.height),r=t.strokeWidth,s=a.clientWidth,l=a.clientHeight-r,h=i-n,o=this.x=function(t){return t*(s/(e.length-1))},u=this.y=function(t){var e=l;return h&&(e-=(t-n)/h*l),e+r/2},i=u(Math.max(n,0)),c=[0,i],p=0;p<e.length;p++)c.push(o(p),u(e[p]));c.push(s,i),t.fill&&a.append(M("polygon",{fill:t.fill,points:c.join(" ")})),r&&a.append(M("polyline",{fill:"none",points:c.slice(2,c.length-2).join(" "),stroke:t.stroke,"stroke-width":r,"stroke-linecap":"square"}))}),window.peity=a,{}})());
+/*!
+  Peity Vanila JS
+ */
+
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.peity_vanilla = factory());
+})(this, (function () { 'use strict';
+
+  var peity = function peity(element, type, options) {
+    if (svgSupported) {
+      var $this = element;
+      var chart = new Peity($this, type, Object.assign({}, peity.defaults[type], JSON.parse($this.dataset['peity'] || '{}'), options));
+      $this.addEventListener("change", function () {
+        chart.draw();
+      });
+      $this.dataset['_peity'] = "1";
+      chart.draw();
+      return $this;
+    }
+  };
+
+  var Peity = function Peity($el, type, opts) {
+    this.$el = $el;
+    this.type = type;
+    this.opts = opts;
+  };
+
+  var PeityPrototype = Peity.prototype;
+
+  var svgElement = PeityPrototype.svgElement = function (tag, attrs) {
+    var element = document.createElementNS('http://www.w3.org/2000/svg', tag);
+
+    for (var attr in attrs) {
+      element.setAttribute(attr, attrs[attr]);
+    }
+
+    return element;
+  }; // https://gist.github.com/madrobby/3201472
+
+
+  var svgSupported = 'createElementNS' in document && svgElement('svg', {}).createSVGRect();
+
+  PeityPrototype.draw = function () {
+    var opts = this.opts;
+    peity.graphers[this.type].call(this, opts);
+    if (opts.after) opts.after.call(this, opts);
+  };
+
+  PeityPrototype.isFunction = function (o) {
+    return null !== o && "function" === typeof o && !!o.apply;
+  };
+
+  PeityPrototype.fill = function () {
+    var fill = this.opts.fill;
+    return PeityPrototype.isFunction(fill) ? fill : function (_, i) {
+      return fill[i % fill.length];
+    };
+  };
+
+  PeityPrototype.prepare = function (width, height) {
+    if (!this.$svg) {
+      this.$el.style.display = 'none';
+      this.$el.after(this.$svg = svgElement('svg', {
+        "class": "peity"
+      }));
+    }
+
+    this.$svg.innerHTML = "";
+    this.$svg.setAttribute("width", width);
+    this.$svg.setAttribute("height", height);
+    return this.$svg;
+  };
+
+  PeityPrototype.values = function () {
+    return this.$el.innerText.split(this.opts.delimiter).map(function (value) {
+      return parseFloat(value);
+    });
+  };
+
+  peity.defaults = {};
+  peity.graphers = {};
+
+  peity.register = function (type, defaults, grapher) {
+    this.defaults[type] = defaults;
+    this.graphers[type] = grapher;
+  };
+
+  peity.register('pie', {
+    fill: ['#ff9900', '#fff4dd', '#ffc66e'],
+    radius: 8
+  }, function (opts) {
+    if (!opts.delimiter) {
+      var delimiter = this.$el.innerText.match(/[^0-9\.]/);
+      opts.delimiter = delimiter ? delimiter[0] : ",";
+    }
+
+    var values = this.values().map(function (n) {
+      return n > 0 ? n : 0;
+    });
+
+    if (opts.delimiter == "/") {
+      var v1 = values[0];
+      var v2 = values[1];
+      values = [v1, Math.max(0, v2 - v1)];
+    }
+
+    var i = 0;
+    var length = values.length;
+    var sum = 0;
+
+    for (; i < length; i++) {
+      sum += values[i];
+    }
+
+    if (!sum) {
+      length = 2;
+      sum = 1;
+      values = [0, 1];
+    }
+
+    var diameter = opts.radius * 2;
+    var $svg = this.prepare(opts.width || diameter, opts.height || diameter);
+    var width = $svg.clientWidth,
+        height = $svg.clientHeight,
+        cx = width / 2,
+        cy = height / 2;
+    var radius = Math.min(cx, cy),
+        innerRadius = opts.innerRadius;
+
+    if (this.type == 'donut' && !innerRadius) {
+      innerRadius = radius * 0.5;
+    }
+
+    var pi = Math.PI;
+    var fill = this.fill();
+
+    var scale = this.scale = function (value, radius) {
+      var radians = value / sum * pi * 2 - pi / 2;
+      return [radius * Math.cos(radians) + cx, radius * Math.sin(radians) + cy];
+    };
+
+    var cumulative = 0;
+
+    for (i = 0; i < length; i++) {
+      var value = values[i],
+          portion = value / sum,
+          $node;
+      if (portion == 0) continue;
+
+      if (portion == 1) {
+        if (innerRadius) {
+          var x2 = cx - 0.01,
+              y1 = cy - radius,
+              y2 = cy - innerRadius;
+          $node = svgElement('path', {
+            d: ['M', cx, y1, 'A', radius, radius, 0, 1, 1, x2, y1, 'L', x2, y2, 'A', innerRadius, innerRadius, 0, 1, 0, cx, y2].join(' '),
+            'data-value': value
+          });
+        } else {
+          $node = svgElement('circle', {
+            cx: cx,
+            cy: cy,
+            'data-value': value,
+            r: radius
+          });
+        }
+      } else {
+        var cumulativePlusValue = cumulative + value;
+        var d = ['M'].concat(scale(cumulative, radius), 'A', radius, radius, 0, portion > 0.5 ? 1 : 0, 1, scale(cumulativePlusValue, radius), 'L');
+
+        if (innerRadius) {
+          d = d.concat(scale(cumulativePlusValue, innerRadius), 'A', innerRadius, innerRadius, 0, portion > 0.5 ? 1 : 0, 0, scale(cumulative, innerRadius));
+        } else {
+          d.push(cx, cy);
+        }
+
+        cumulative += value;
+        $node = svgElement('path', {
+          d: d.join(" "),
+          'data-value': value
+        });
+      }
+
+      $node.setAttribute('fill', fill.call(this, value, i, values));
+      $svg.append($node);
+    }
+  });
+  peity.register('donut', Object.assign(true, {}, peity.defaults.pie), function (opts) {
+    peity.graphers.pie.call(this, opts);
+  });
+  peity.register('bar', {
+    delimiter: ",",
+    fill: ["#4D89F9"],
+    height: 16,
+    min: 0,
+    padding: 0.1,
+    width: 32
+  }, function (opts) {
+    var values = this.values(),
+        max = Math.max.apply(Math, opts.max == undefined ? values : values.concat(opts.max)),
+        min = Math.min.apply(Math, opts.min == undefined ? values : values.concat(opts.min));
+    var $svg = this.prepare(opts.width, opts.height),
+        width = $svg.clientWidth,
+        height = $svg.clientHeight,
+        diff = max - min,
+        padding = opts.padding,
+        fill = this.fill();
+
+    var xScale = this.x = function (input) {
+      return input * width / values.length;
+    };
+
+    var yScale = this.y = function (input) {
+      return height - (diff ? (input - min) / diff * height : 1);
+    };
+
+    for (var i = 0; i < values.length; i++) {
+      var x = xScale(i + padding),
+          w = xScale(i + 1 - padding) - x,
+          value = values[i],
+          valueY = yScale(value),
+          y1 = valueY,
+          y2 = valueY,
+          h;
+
+      if (!diff) {
+        h = 1;
+      } else if (value < 0) {
+        y1 = yScale(Math.min(max, 0));
+      } else {
+        y2 = yScale(Math.max(min, 0));
+      }
+
+      h = y2 - y1;
+
+      if (h == 0) {
+        h = 1;
+        if (max > 0 && diff) y1--;
+      }
+
+      $svg.append(svgElement('rect', {
+        'data-value': value,
+        fill: fill.call(this, value, i, values),
+        x: x,
+        y: y1,
+        width: w,
+        height: h
+      }));
+    }
+  });
+  peity.register("line", {
+    delimiter: ",",
+    fill: "#c6d9fd",
+    height: 16,
+    min: 0,
+    stroke: "#4d89f9",
+    strokeWidth: 1,
+    width: 32
+  }, function (opts) {
+    var values = this.values();
+    if (values.length == 1) values.push(values[0]);
+    var max = Math.max.apply(Math, opts.max == undefined ? values : values.concat(opts.max)),
+        min = Math.min.apply(Math, opts.min == undefined ? values : values.concat(opts.min));
+    var $svg = this.prepare(opts.width, opts.height),
+        strokeWidth = opts.strokeWidth,
+        width = $svg.clientWidth,
+        height = $svg.clientHeight - strokeWidth,
+        diff = max - min;
+
+    var xScale = this.x = function (input) {
+      return input * (width / (values.length - 1));
+    };
+
+    var yScale = this.y = function (input) {
+      var y = height;
+
+      if (diff) {
+        y -= (input - min) / diff * height;
+      }
+
+      return y + strokeWidth / 2;
+    };
+
+    var zero = yScale(Math.max(min, 0)),
+        coords = [0, zero];
+
+    for (var i = 0; i < values.length; i++) {
+      coords.push(xScale(i), yScale(values[i]));
+    }
+
+    coords.push(width, zero);
+
+    if (opts.fill) {
+      $svg.append(svgElement('polygon', {
+        fill: opts.fill,
+        points: coords.join(' ')
+      }));
+    }
+
+    if (strokeWidth) {
+      $svg.append(svgElement('polyline', {
+        fill: 'none',
+        points: coords.slice(2, coords.length - 2).join(' '),
+        stroke: opts.stroke,
+        'stroke-width': strokeWidth,
+        'stroke-linecap': 'square'
+      }));
+    }
+  });
+  var index = window.peity = peity;
+
+  return index;
+
+}));
 //# sourceMappingURL=peity_vanilla.js.map
