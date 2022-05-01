@@ -1,32 +1,40 @@
 import babel from "@rollup/plugin-babel";
 import resolve from "@rollup/plugin-node-resolve";
-import htmlTemplate from 'rollup-plugin-generate-html-template';
+import { version } from "./package.json";
+const year = new Date().getFullYear();
 
 const banner = `/*!
-  Peity Vanila JS
+  Peity Vanila JS ${version}
+  Copyright © ${year} RailsJazz
  */
 `;
 
 export default [
   {
     input: "src/index.js",
-    output: {
-      name: "peity_vanilla",
-      file: "dist/peity_vanilla.js",
-      format: "umd",
-      sourcemap: true,
-      banner: banner
-    },
+    output: [
+      {
+        file: "dist/peity_vanilla.es2017-esm.js",
+        format: "es",
+        banner,
+      },
+      {
+        name: "peity",
+        file: "dist/peity_vanilla.js",
+        format: "umd",
+        sourcemap: true,
+        banner: banner,
+      },
+    ],
     plugins: [
       resolve(),
       babel({
-        babelHelpers: 'bundled',
-        presets: [['@babel/preset-env', {targets: 'defaults'}]]
+        babelHelpers: "bundled",
+        presets: [["@babel/preset-env", { targets: "defaults" }]],
       }),
-      htmlTemplate({
-        template: 'src/index.html',
-        target: 'dist/index.html',
-      })
-    ]
-  }
+    ],
+    watch: {
+      include: "src/**",
+    },
+  },
 ];
