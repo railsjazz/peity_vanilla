@@ -1,10 +1,16 @@
 {
   "name": "piety_vanilla",
   "description": "peity_vanilla is a vanilla version of original piety jQuery plugin that converts an element's content into a mini `svg` pie, line or bar chart.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": false,
-  "author": "Igor Kasyanchuk",
+  "author": "www.railsjazz.com",
+  "contributors": [
+    "Igor Kasyanchuk <igorkasyanchuk@gmail.com>",
+    "Liubomyr Manastyretskyi <manastyretskyi@gmail.com>"
+  ],
   "license": "MIT",
+  "module": "dist/peity_vanilla.es2017-esm.js",
+  "main": "dist/peity_vanilla.js",
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -wc"

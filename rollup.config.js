@@ -6,6 +6,7 @@ const year = new Date().getFullYear();
 const banner = `/*!
   Peity Vanila JS ${version}
   Copyright © ${year} RailsJazz
+  https://railsjazz.com
  */
 `;
 
