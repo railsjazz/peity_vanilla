@@ -153,7 +153,8 @@
           }
         }))
 
-        var updatingChart = peity(document.getElementById("updating-chart"), "line", { width: 64 });
+        var updatingChart = document.getElementById("updating-chart");
+        peity(updatingChart, "line", { width: 64 });
         
         setInterval(function() {
           var random = Math.round(Math.random() * 10)
@@ -166,6 +167,5 @@
           updatingChart.dispatchEvent(new Event('change'))
         }, 1000);
       </script>
-  <script  src="peity_vanilla.js"></script>
-</body>
+  </body>
 </html>
