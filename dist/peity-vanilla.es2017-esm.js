@@ -1,5 +1,5 @@
 /*!
-  Peity Vanila JS 0.0.6
+  Peity Vanila JS 0.0.7
   Copyright © 2022 RailsJazz
   https://railsjazz.com
  */
