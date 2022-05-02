@@ -11,6 +11,7 @@
   "license": "MIT",
   "module": "dist/peity_vanilla.es2017-esm.js",
   "main": "dist/peity_vanilla.js",
+  "browser": "dist/peity_vanilla.min.js",
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -wc"
@@ -27,6 +28,7 @@
     "@rollup/plugin-node-resolve": "^11.2.1",
     "css-loader": "^5.2.6",
     "rollup": "^2.44.0",
+    "rollup-plugin-terser": "^7.0.2",
     "style-loader": "^2.0.0"
   },
   "keywords": [

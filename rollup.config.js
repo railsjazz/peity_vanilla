@@ -1,6 +1,8 @@
 import babel from "@rollup/plugin-babel";
 import resolve from "@rollup/plugin-node-resolve";
 import { version } from "./package.json";
+import { terser } from 'rollup-plugin-terser';
+
 const year = new Date().getFullYear();
 
 const banner = `/*!
@@ -25,6 +27,13 @@ export default [
         format: "umd",
         sourcemap: true,
         banner: banner,
+      },
+      {
+        name: "peity",
+        file: "dist/peity_vanilla.min.js",
+        format: "iife",
+        banner: banner,
+        plugins: [terser()]
       },
     ],
     plugins: [

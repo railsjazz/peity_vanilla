@@ -66,7 +66,13 @@ var Peity = /*#__PURE__*/function () {
 
     this.element = element;
     this.type = type;
-    this.options = Object.assign({}, Peity.defaults[type], JSON.parse(element.dataset["peity"] || "{}"), options);
+    this.options = Object.assign({}, Peity.defaults[this.type], JSON.parse(element.dataset["peity"] || "{}"), options);
+
+    if (this.element._peity) {
+      this.element._peity.destroy();
+    }
+
+    this.element._peity = this;
   }
 
   _createClass(Peity, [{
@@ -111,13 +117,21 @@ var Peity = /*#__PURE__*/function () {
     value: function mount() {
       if (!svgSupported) return;
       this.element.addEventListener("change", this.draw.bind(this));
-      this.element.dataset["_peity"] = "1";
       this.draw();
+      this.mounted = true;
     }
   }, {
     key: "unmount",
     value: function unmount() {
       this.element.removeEventListener("change", this.draw);
+      this.svg.remove();
+      this.mounted = false;
+    }
+  }, {
+    key: "destroy",
+    value: function destroy() {
+      this.unmount();
+      delete this.element._peity;
     }
   }], [{
     key: "register",

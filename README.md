@@ -4,16 +4,16 @@
 
 Converts an element's content into a `<svg>` mini pie  donut  line  or bar chart  and is compatible with any browser that supports `<svg>`: Chrome, Firefox, IE9+, Opera, Safari.
 
-PS: 98% based on the original implementation: http://benpickles.github.io/peity/. 
+PS: Based on the original implementation: http://benpickles.github.io/peity/. 
 
 ## Installation
 
-Just download `peity_vanilla.js` and add to your HTML file. 
+Just download `peity_vanilla.min.js` and add to your HTML file. 
 
 Download link: https://raw.githubusercontent.com/railsjazz/peity_vanilla/main/dist/peity_vanilla.js.
 
 ```html
-<script type="text/javascript" src="peity_vanilla.js"></script>
+<script type="text/javascript" src="peity_vanilla.min.js"></script>
 ```
 
 And start using :)
@@ -236,10 +236,10 @@ Please if you want to contribute here is a list with some ideas:
 
 - version for react, angular, vue, ...
 - unit tests
+- TypeScript?
 - tooltips
 - more chart types (stacked, multi-line, etc)
 - more options for existing charts
-- minified version
 - build process and instructions
 - remote datasource
 - background color?
