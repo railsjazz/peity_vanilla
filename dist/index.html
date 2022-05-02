@@ -191,13 +191,11 @@
 
       setInterval(function () {
         var random = Math.round(Math.random() * 10);
-        // debugger
         var values = updatingChart.innerText.split(",");
         values.shift();
         values.push(random);
 
         updatingChart.innerText = values.join(",");
-        updatingChart.dispatchEvent(new Event("change"));
       }, 1000);
     </script>
   </body>
