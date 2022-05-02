@@ -9,10 +9,15 @@ class Peity {
     this.type = type;
     this.options = Object.assign(
       {},
-      Peity.defaults[type],
+      Peity.defaults[this.type],
       JSON.parse(element.dataset["peity"] || "{}"),
       options
     );
+
+    if(this.element._peity) {
+      this.element._peity.destroy();
+    }
+    this.element._peity = this;
   }
 
   draw() {
@@ -58,13 +63,21 @@ class Peity {
     if (!svgSupported) return;
 
     this.element.addEventListener("change", this.draw.bind(this));
-    this.element.dataset["_peity"] = "1";
-
     this.draw();
+
+    this.mounted = true;
   }
 
   unmount() {
     this.element.removeEventListener("change", this.draw);
+    this.svg.remove();
+    this.mounted = false;
+  }
+
+  destroy() {
+    this.unmount();
+
+    delete this.element._peity;
   }
 
   static register(type, defaults, grapher) {
