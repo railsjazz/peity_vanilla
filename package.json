@@ -1,7 +1,7 @@
 {
   "name": "peity-vanilla",
   "description": "peity-vanilla is a vanilla version of original piety jQuery plugin that converts an element's content into a mini `svg` pie, line or bar chart.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": false,
   "author": "www.railsjazz.com",
   "contributors": [
