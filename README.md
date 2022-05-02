@@ -8,12 +8,12 @@ PS: Based on the original implementation: http://benpickles.github.io/peity/.
 
 ## Installation
 
-Just download `peity_vanilla.min.js` and add to your HTML file. 
+Just download `peity-vanilla.min.js` and add to your HTML file. 
 
-Download link: https://raw.githubusercontent.com/railsjazz/peity_vanilla/main/dist/peity_vanilla.js.
+Download link: https://raw.githubusercontent.com/railsjazz/peity_vanilla/main/dist/peity-vanilla.js.
 
 ```html
-<script type="text/javascript" src="peity_vanilla.min.js"></script>
+<script type="text/javascript" src="peity-vanilla.min.js"></script>
 ```
 
 And start using :)

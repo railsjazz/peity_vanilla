@@ -17,20 +17,20 @@ export default [
     input: "src/index.js",
     output: [
       {
-        file: "dist/peity_vanilla.es2017-esm.js",
+        file: "dist/peity-vanilla.es2017-esm.js",
         format: "es",
         banner,
       },
       {
         name: "peity",
-        file: "dist/peity_vanilla.js",
+        file: "dist/peity-vanilla.js",
         format: "umd",
         sourcemap: true,
         banner: banner,
       },
       {
         name: "peity",
-        file: "dist/peity_vanilla.min.js",
+        file: "dist/peity-vanilla.min.js",
         format: "iife",
         banner: banner,
         plugins: [terser()]

@@ -395,4 +395,4 @@
   return peity;
 
 }));
-//# sourceMappingURL=peity_vanilla.js.map
+//# sourceMappingURL=peity-vanilla.js.map
