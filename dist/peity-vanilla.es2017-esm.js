@@ -80,14 +80,14 @@ class Peity {
   mount() {
     if (!svgSupported) return;
 
-    this.element.addEventListener("change", this.draw.bind(this));
+    this.element.addEventListener("DOMSubtreeModified", this.draw.bind(this));
     this.draw();
 
     this.mounted = true;
   }
 
   unmount() {
-    this.element.removeEventListener("change", this.draw);
+    this.element.removeEventListener("DOMSubtreeModified", this.draw);
     this.svg.remove();
     this.mounted = false;
   }
