@@ -250,7 +250,11 @@ Please if you want to contribute here is a list with some ideas:
 
 # Credits
 
+[<img src="https://opensource-heroes.com/svg/embed/railsjazz/peity_vanilla"
+/>](https://opensource-heroes.com/r/railsjazz/peity_vanilla)
+
 Thanks for inspiration and original jQuery implementation - http://benpickles.github.io/peity/. I must admit this version is 98% consist of the original code, even the documentation, so please go to original page and put a "star" to original repo.
+
 
 
 [<img src="https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/more_gems.png?raw=true"
