@@ -1,6 +1,6 @@
 /*!
   Peity Vanila JS 0.0.8
-  Copyright © 2022 RailsJazz
+  Copyright © 2024 RailsJazz
   https://railsjazz.com
  */
 
@@ -38,7 +38,7 @@
         options
       );
 
-      if(this.element._peity) {
+      if (this.element._peity) {
         this.element._peity.destroy();
       }
       this.element._peity = this;
@@ -56,8 +56,8 @@
       return isFunction(fill)
         ? fill
         : function (_, i) {
-            return fill[i % fill.length];
-          };
+          return fill[i % fill.length];
+        };
     }
 
     prepare(width, height) {
@@ -85,15 +85,18 @@
 
     mount() {
       if (!svgSupported) return;
-
-      this.element.addEventListener("DOMSubtreeModified", this.draw.bind(this));
+      this.observer = new MutationObserver(this.draw.bind(this));
+      const config = { attributes: true, childList: true, subtree: true };
+      this.observer.observe(this.element, config);
       this.draw();
-
       this.mounted = true;
     }
 
     unmount() {
-      this.element.removeEventListener("DOMSubtreeModified", this.draw);
+      if (this.observer) {
+        this.observer.disconnect();
+      }
+
       this.svg.remove();
       this.mounted = false;
     }
