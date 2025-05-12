@@ -1,6 +1,6 @@
 # Peity Vanilla JS
 
-[![Listed on OpenSource-Heroes.com](https://opensource-heroes.com/badge-v1.svg)](https://opensource-heroes.com/r/railsjazz/peity_vanilla)
+[!["Buy Me A Coffee"](https://github.com/igorkasyanchuk/get-smart/blob/main/docs/snapshot-bmc-button-small.png?raw=true)](https://buymeacoffee.com/igorkasyanchuk)
 
 <img width="900" alt="peity" src="https://user-images.githubusercontent.com/11101/166119610-3b7c894e-1995-45ce-90f1-b94411a04d67.png">
 
@@ -250,12 +250,12 @@ Please if you want to contribute here is a list with some ideas:
 
 # Credits
 
-[<img src="https://opensource-heroes.com/svg/embed/railsjazz/peity_vanilla"
-/>](https://opensource-heroes.com/r/railsjazz/peity_vanilla)
-
 Thanks for inspiration and original jQuery implementation - http://benpickles.github.io/peity/. I must admit this version is 98% consist of the original code, even the documentation, so please go to original page and put a "star" to original repo.
 
 
 
 [<img src="https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/more_gems.png?raw=true"
 />](https://www.railsjazz.com/?utm_source=github&utm_medium=bottom&utm_campaign=peity_vanilla)
+
+
+[!["Buy Me A Coffee"](https://github.com/igorkasyanchuk/get-smart/blob/main/docs/snapshot-bmc-button-small.png?raw=true)](https://buymeacoffee.com/igorkasyanchuk)
